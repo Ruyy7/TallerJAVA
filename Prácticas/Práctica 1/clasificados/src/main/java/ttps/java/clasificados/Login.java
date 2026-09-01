@@ -29,14 +29,12 @@ public class Login extends HttpServlet {
 
         Optional<Usuario> usuarioRegistrado = this.usuarios.stream().filter(u -> u.getNombreUsuario().equals(usernameParam) && u.getClave().equals(passwordParam)).findFirst();
 
-        if (usuarioRegistrado.isPresent()){
+        if (usuarioRegistrado.isPresent()) {
+            request.setAttribute("usuario", usuarioRegistrado.get().getNombreUsuario());
+            request.setAttribute("perfil", usuarioRegistrado.get().getPerfil());
+
             getServletContext().setAttribute("ultimoAcceso", usuarioRegistrado.get().getNombreUsuario());
-            if (usuarioRegistrado.get().getPerfil() instanceof Administrador){
-                response.sendRedirect("administrador.html");
-            }
-            else {
-                response.sendRedirect("publicador.html");
-            }
+            request.getRequestDispatcher("/menu").forward(request, response);
         }
         else{
             response.sendRedirect("error.html");
