@@ -12,6 +12,11 @@ import java.io.IOException;
 public class Menu extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String usuario = req.getAttribute("usuario").toString();
+        if (req.getAttribute("perfil") instaceof Administrador){
 
-    }
+        }
+        else{
+
+        }
 }
