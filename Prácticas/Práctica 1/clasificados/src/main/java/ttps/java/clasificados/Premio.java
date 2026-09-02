@@ -14,7 +14,7 @@ public class Premio extends HttpServlet {
     private int contadorVisitas;
 
     public Premio() {
-        this.contadorVisitas = 0;
+        this.contadorVisitas = 1;
     }
 
     public void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
