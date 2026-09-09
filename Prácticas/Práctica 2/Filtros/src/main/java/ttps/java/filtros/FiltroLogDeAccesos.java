@@ -1,6 +1,7 @@
-package ttps.java.clasificados;
+package ttps.java.filtros;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import java.util.Date;
 import java.util.logging.Logger;
 
 @Slf4j
+@WebFilter("/LoginMultilenguaje")
 public class FiltroLogDeAccesos implements Filter {
 
     @Override
